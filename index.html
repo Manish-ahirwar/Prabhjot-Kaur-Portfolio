@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Prabhjot Kaur — Visual Designer & Illustrator with 6 years of experience in branding, illustration, social media, print and UI/UX design."
+    />
+    <meta name="theme-color" content="#f7f4ec" />
+    <title>Prabhjot Kaur — Visual Designer & Illustrator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header" id="">
+      <div class="container nav-wrap">
+        <a class="brand" href="#top" aria-label="Prabhjot Kaur home"
+          >Prabhjot Kaur<span>.</span></a
+        >
+        <button
+          class="menu-toggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span>
+        </button>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#services">Resume</a>
+          <a href="portfolio.html">Work</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">HELLO, I'M</p>
+            <h1>
+              Visual Designer <span>&amp;</span><br /><em>Illustrator</em>
+            </h1>
+            <p class="hero-lead">
+              I create engaging, meaningful, and visually impactful designs that
+              communicate clearly, tell stories, and connect with audiences.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#work"
+                >View My Work <span>↗</span></a
+              >
+              <a class="btn btn-outline" href="#contact"
+                >Let's Work Together <span>↗</span></a
+              >
+            </div>
+          </div>
+
+          <div class="hero-art reveal">
+            <div class="art-shape art-circle"></div>
+            <div class="art-shape art-square"></div>
+            <div class="art-frame">
+              <div class="portrait-placeholder">
+                <img
+                  src="./assets/images/Other/self-image.webp"
+                  alt="Prabhjot Kaur"
+                  class="hero-profile-image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="services section" id="services">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">WHAT I DO</p>
+            <h2>Creative expertise that<br /><em>brings ideas to life.</em></h2>
+          </div>
+          <div class="service-grid">
+            <article class="service-card reveal">
+              <div class="service-icon">01</div>
+              <h3>Visual Identity</h3>
+              <p>
+                Visual systems that give brands a distinctive and consistent
+                personality.
+              </p>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-icon">02</div>
+              <h3>Branding &amp; Logo</h3>
+              <p>
+                Thoughtful identities and logos built around clear visual
+                communication.
+              </p>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-icon">03</div>
+              <h3>Illustration</h3>
+              <p>
+                Expressive illustrations, characters and visual stories for
+                different audiences.
+              </p>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-icon">04</div>
+              <h3>Social Media</h3>
+              <p>
+                Scroll-stopping creative designed for campaigns, content and
+                digital platforms.
+              </p>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-icon">05</div>
+              <h3>Print &amp; Education</h3>
+              <p>
+                Clear, engaging layouts for educational, editorial, print and
+                communication materials.
+              </p>
+            </article>
+            <article class="service-card reveal">
+              <div class="service-icon">06</div>
+              <h3>UI / UX Design</h3>
+              <p>
+                Simple and purposeful interfaces that balance usability with
+                visual personality.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="work section" id="work">
+        <div class="container">
+          <div class="work-head reveal">
+            <div class="section-heading">
+              <p class="eyebrow">SELECTED WORK</p>
+              <h2>A collection of <em>creative work.</em></h2>
+            </div>
+            <p class="work-intro">
+              Explore selected projects across illustration, branding, social
+              media, print, UI/UX and visual design.
+            </p>
+          </div>
+
+          <div
+            class="filter-bar reveal"
+            role="tablist"
+            aria-label="Portfolio categories"
+          >
+            <button class="filter-btn active" data-filter="all">
+              All Designs
+            </button>
+            <button class="filter-btn" data-filter="illustration">
+              Illustration
+            </button>
+            <button class="filter-btn" data-filter="branding">Branding</button>
+            <button class="filter-btn" data-filter="social">
+              Social Media
+            </button>
+            <button class="filter-btn" data-filter="print">Print</button>
+            <button class="filter-btn" data-filter="uiux">UI/UX</button>
+          </div>
+
+          <div class="project-grid" id="projectGrid"></div>
+
+          <div class="more-work">
+            <div class="more-work-copy">
+              <p class="eyebrow">MORE TO EXPLORE</p>
+              <h3>There’s more where<br /><em>that came from.</em></h3>
+            </div>
+            <a href="#contact" class="btn btn-dark"
+              >Let's Talk <span>↗</span></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="about section" id="about">
+        <div class="container about-grid">
+          <div class="about-label reveal">
+            <p class="eyebrow">ABOUT ME</p>
+            <div class="about-number">
+              06<span>+</span><small>YEARS<br />EXPERIENCE</small>
+            </div>
+          </div>
+          <div class="about-copy reveal">
+            <h2>Design with purpose,<br /><em>storytelling with soul.</em></h2>
+            <p>
+              I’m Prabhjot Kaur, a Visual Designer &amp; Illustrator with 6
+              years of experience creating engaging, meaningful, and visually
+              impactful designs.
+            </p>
+            <p>
+              My work spans visual identity, branding &amp; logo design, social
+              media, illustration, character design, educational &amp; print
+              design, infographics, merchandise, and UI/UX design.
+            </p>
+            <p>
+              I enjoy transforming ideas into creative visual experiences that
+              communicate clearly, tell stories, and connect with audiences. My
+              design approach combines creativity, visual storytelling,
+              attention to detail, and clear communication.
+            </p>
+            <p>
+              Over the years, I’ve worked on a variety of projects for brands,
+              campaigns, educational content, digital platforms, and
+              communication materials, adapting my visual style to different
+              audiences and requirements.
+            </p>
+            <p>
+              I’m always excited to explore new ideas, experiment with different
+              visual styles, and take on creative challenges.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section" id="contact">
+        <div class="container contact-box reveal">
+          <div>
+            <p class="eyebrow">LET'S CONNECT</p>
+            <h2>Have a project or<br /><em>creative idea?</em></h2>
+            <p>Let’s create something meaningful together.</p>
+          </div>
+          <div class="contact-details">
+            <a href="mailto:prabhjot11r@gmail.com" class="contact-link">
+              <span>Email</span>
+              prabhjot11r@gmail.com <b>↗</b>
+            </a>
+            <a href="tel:+918882903113" class="contact-link">
+              <span>Phone</span>
+              +91 8882903113 <b>↗</b>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> Prabhjot Kaur. All rights reserved.</p>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <div class="project-modal" id="projectModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal></div>
+      <article
+        class="modal-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+      >
+        <button class="modal-close" aria-label="Close project">×</button>
+        <div class="modal-image" id="modalImage"></div>
+        <div class="modal-content">
+          <p class="eyebrow" id="modalCategory"></p>
+          <h2 id="modalTitle"></h2>
+          <p id="modalDescription"></p>
+        </div>
+      </article>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

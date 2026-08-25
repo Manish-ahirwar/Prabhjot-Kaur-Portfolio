@@ -1,0 +1,18 @@
+.DS_Store
+optimized-assets/
+
+# macOS
+.DS_Store
+
+# Temporary optimized assets folder
+optimized-assets/
+
+# Original design/source files
+*.pdf
+*.ai
+*.psd
+
+# Original raster images — use WebP versions in Git
+*.jpg
+*.jpeg
+*.png
