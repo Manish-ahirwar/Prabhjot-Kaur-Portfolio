@@ -91,6 +91,16 @@ const projects = [
     image: "./assets/images/UI%20UX%20Design/phone%20design.webp",
     link: "uiux.html",
   },
+
+  {
+  title: "Banner Design",
+  category: "banner",
+  label: "Banner Design",
+  description:
+    "Creative banner designs created for digital campaigns, promotions and visual communication.",
+  image: "./assets/images/Banner%20Design/banner-1.webp",
+  link: "banner-design.html"
+},
 ];
 
 const projectGrid = document.querySelector("#projectGrid");

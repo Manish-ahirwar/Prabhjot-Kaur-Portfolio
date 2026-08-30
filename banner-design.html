@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Banner Design portfolio by Prabhjot Kaur, Visual Designer & Illustrator."
+    />
+
+    <title>Banner Design — Prabhjot Kaur</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+
+    <style>
+      /* ================================
+         BANNER DESIGN GALLERY
+      ================================= */
+
+      .banner-gallery {
+        padding: 80px 0 120px;
+      }
+
+      .banner-gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .banner-gallery-item {
+        position: relative;
+        background: #fff;
+        border: 1px solid rgba(20, 20, 20, 0.08);
+        min-height: 360px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        cursor: pointer;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .banner-gallery-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      .banner-gallery-item img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-height: 520px;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      /* Coming Soon */
+
+      .banner-coming-soon {
+        cursor: default;
+        background: #f0eee6;
+        min-height: 360px;
+      }
+
+      .banner-coming-soon:hover {
+        transform: none;
+        box-shadow: none;
+      }
+
+      .coming-soon-inner {
+        text-align: center;
+        padding: 40px;
+      }
+
+      .coming-soon-number {
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        color: #888;
+        margin-bottom: 24px;
+      }
+
+      .coming-soon-inner h3 {
+        margin: 0;
+        font-size: clamp(26px, 3vw, 42px);
+        line-height: 1;
+      }
+
+      .coming-soon-inner h3 em {
+        display: block;
+        color: #00a98f;
+        font-family: "Playfair Display", serif;
+        font-weight: 600;
+        margin-top: 8px;
+      }
+
+      .coming-soon-inner p {
+        margin: 18px auto 0;
+        max-width: 260px;
+        color: #777;
+        font-size: 14px;
+      }
+
+      /* Hide items after first 6 */
+
+      .banner-gallery-item.is-hidden {
+        display: none;
+      }
+
+      /* View More */
+
+      .banner-view-more {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+      }
+
+      .banner-view-more.is-hidden {
+        display: none;
+      }
+
+      /* ================================
+         LIGHTBOX
+      ================================= */
+
+      .banner-lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: rgba(15, 15, 15, 0.94);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition:
+          opacity 0.25s ease,
+          visibility 0.25s ease;
+      }
+
+      .banner-lightbox.open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .banner-lightbox-image-wrap {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .banner-lightbox img {
+        display: block;
+        max-width: 94vw;
+        max-height: 90vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      .banner-lightbox-close {
+        position: fixed;
+        top: 24px;
+        right: 28px;
+        width: 46px;
+        height: 46px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        background: rgba(0, 0, 0, 0.2);
+        color: #fff;
+        border-radius: 50%;
+        font-size: 28px;
+        line-height: 1;
+        cursor: pointer;
+        z-index: 2;
+      }
+
+      .banner-lightbox-close:hover {
+        background: #00a98f;
+        border-color: #00a98f;
+      }
+
+      body.banner-lightbox-open {
+        overflow: hidden;
+      }
+
+      /* ================================
+         RESPONSIVE
+      ================================= */
+
+      @media (max-width: 900px) {
+        .banner-gallery {
+          padding: 60px 0 90px;
+        }
+
+        .banner-gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 18px;
+        }
+
+        .banner-gallery-item {
+          min-height: 300px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .banner-gallery {
+          padding: 45px 0 70px;
+        }
+
+        .banner-gallery-grid {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+
+        .banner-gallery-item {
+          min-height: 280px;
+        }
+
+        .banner-gallery-item img {
+          max-height: 500px;
+        }
+
+        .banner-lightbox {
+          padding: 20px;
+        }
+
+        .banner-lightbox-close {
+          top: 16px;
+          right: 16px;
+          width: 42px;
+          height: 42px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html"> Prabhjot Kaur<span>.</span> </a>
+
+        <button
+          class="menu-toggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="about.html">About</a>
+           <a href="./assets/Resume/resume.pdf" target="_blank" rel="noopener">
+            Resume
+          </a>
+          <a href="portfolio.html">Work</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+
+      <section class="project-hero category-hero">
+        <div class="container">
+          <div class="project-topline">
+            <span>10</span>
+            <span>Banner Design</span>
+          </div>
+
+          <h1>
+            Banner Design<br />
+            <em>portfolio.</em>
+          </h1>
+
+          <p>
+            Creative banner designs created for campaigns, promotions,
+            communication and digital platforms.
+          </p>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+
+      <section class="banner-gallery">
+        <div class="container">
+          <div class="banner-gallery-grid">
+            <!-- IMAGE 01 -->
+
+            <div
+              class="banner-gallery-item"
+              data-image="./assets/images/Banner%20Design/banner-1.webp"
+              data-alt="Banner Design 01"
+            >
+              <img
+                src="./assets/images/Banner%20Design/banner-1.webp"
+                alt="Banner Design 01"
+                loading="lazy"
+              />
+            </div>
+
+            <!-- IMAGE 02 -->
+
+            <div
+              class="banner-gallery-item"
+              data-image="./assets/images/Banner%20Design/banner-2.webp"
+              data-alt="Banner Design 02"
+            >
+              <img
+                src="./assets/images/Banner%20Design/banner-2.webp"
+                alt="Banner Design 02"
+                loading="lazy"
+              />
+            </div>
+
+            <!-- IMAGE 03 -->
+
+            <div
+              class="banner-gallery-item"
+              data-image="./assets/images/Banner%20Design/banner-3.webp"
+              data-alt="Banner Design 03"
+            >
+              <img
+                src="./assets/images/Banner%20Design/banner-3.webp"
+                alt="Banner Design 03"
+                loading="lazy"
+              />
+            </div>
+
+            <!-- IMAGE 04 -->
+
+            <div
+              class="banner-gallery-item"
+              data-image="./assets/images/Banner%20Design/banner-4.webp"
+              data-alt="Banner Design 04"
+            >
+              <img
+                src="./assets/images/Banner%20Design/banner-4.webp"
+                alt="Banner Design 04"
+                loading="lazy"
+              />
+            </div>
+
+            <!-- IMAGE 05 -->
+
+            <div
+              class="banner-gallery-item"
+              data-image="./assets/images/Banner%20Design/banner-5.webp"
+              data-alt="Banner Design 05"
+            >
+              <img
+                src="./assets/images/Banner%20Design/banner-5.webp"
+                alt="Banner Design 05"
+                loading="lazy"
+              />
+            </div>
+
+            <!-- IMAGE 06 -->
+
+            <!-- <div
+              class="banner-gallery-item"
+              data-image="./assets/images/Banner%20Design/banner-06.webp"
+              data-alt="Banner Design 06"
+            >
+              <img
+                src="./assets/images/Banner%20Design/banner-06.webp"
+                alt="Banner Design 06"
+                loading="lazy"
+              />
+            </div> -->
+
+            <!--
+              MORE IMAGES
+              Copy the block below for image 07, 08, 09...
+              These remain hidden until View More is clicked.
+            -->
+
+            <!-- <div
+              class="banner-gallery-item is-hidden"
+              data-image="./assets/images/Banner%20Design/banner-07.webp"
+              data-alt="Banner Design 07"
+            >
+              <img
+                src="./assets/images/Banner%20Design/banner-07.webp"
+                alt="Banner Design 07"
+                loading="lazy"
+              />
+            </div> -->
+
+            <!-- <div
+              class="banner-gallery-item is-hidden"
+              data-image="./assets/images/Banner%20Design/banner-08.webp"
+              data-alt="Banner Design 08"
+            >
+              <img
+                src="./assets/images/Banner%20Design/banner-08.webp"
+                alt="Banner Design 08"
+                loading="lazy"
+              />
+            </div> -->
+          </div>
+
+          <!-- VIEW MORE -->
+
+          <div class="banner-view-more">
+            <button class="btn btn-dark" id="bannerViewMore">
+              View More <span>↓</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+
+      <section class="project-cta">
+        <div class="container">
+          <p class="eyebrow">VIEW OTHER PROJECTS</p>
+
+          <h2>
+            Explore more of<br />
+            <em>Prabhjot's work.</em>
+          </h2>
+
+          <a class="btn btn-dark" href="portfolio.html">
+            Back to Work <span>↗</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> Prabhjot Kaur.</p>
+
+        <a href="contact.html"> Let's work together ↗ </a>
+      </div>
+    </footer>
+
+    <!-- LIGHTBOX -->
+
+    <div class="banner-lightbox" id="bannerLightbox" aria-hidden="true">
+      <button
+        class="banner-lightbox-close"
+        id="bannerLightboxClose"
+        aria-label="Close image"
+      >
+        ×
+      </button>
+
+      <div class="banner-lightbox-image-wrap" data-lightbox-close>
+        <img id="bannerLightboxImage" src="" alt="" />
+      </div>
+    </div>
+
+    <script>
+      /* ================================
+         MOBILE NAV
+      ================================= */
+
+      const menuToggle = document.querySelector(".menu-toggle");
+      const mainNav = document.querySelector(".main-nav");
+
+      if (menuToggle && mainNav) {
+        menuToggle.addEventListener("click", () => {
+          const isOpen = mainNav.classList.toggle("open");
+
+          menuToggle.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        mainNav.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mainNav.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+
+      /* ================================
+         HEADER SCROLL
+      ================================= */
+
+      const header = document.querySelector(".site-header");
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (header) {
+            header.classList.toggle("scrolled", window.scrollY > 10);
+          }
+        },
+        { passive: true },
+      );
+
+      /* ================================
+         VIEW MORE
+      ================================= */
+
+      const viewMoreButton = document.querySelector("#bannerViewMore");
+
+      const hiddenItems = document.querySelectorAll(
+        ".banner-gallery-item.is-hidden",
+      );
+
+      if (viewMoreButton && hiddenItems.length === 0) {
+        viewMoreButton.parentElement.classList.add("is-hidden");
+      }
+
+      if (viewMoreButton) {
+        viewMoreButton.addEventListener("click", () => {
+          hiddenItems.forEach((item) => {
+            item.classList.remove("is-hidden");
+          });
+
+          viewMoreButton.parentElement.classList.add("is-hidden");
+        });
+      }
+
+      /* ================================
+         LIGHTBOX
+      ================================= */
+
+      const lightbox = document.querySelector("#bannerLightbox");
+
+      const lightboxImage = document.querySelector("#bannerLightboxImage");
+
+      const lightboxClose = document.querySelector("#bannerLightboxClose");
+
+      const galleryItems = document.querySelectorAll(
+        ".banner-gallery-item:not(.banner-coming-soon)",
+      );
+
+      function openBannerLightbox(item) {
+        const image = item.querySelector("img");
+
+        if (!image) return;
+
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt || "Banner Design";
+
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+
+        document.body.classList.add("banner-lightbox-open");
+      }
+
+      function closeBannerLightbox() {
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+
+        document.body.classList.remove("banner-lightbox-open");
+
+        lightboxImage.src = "";
+      }
+
+      galleryItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          openBannerLightbox(item);
+        });
+      });
+
+      if (lightboxClose) {
+        lightboxClose.addEventListener("click", closeBannerLightbox);
+      }
+
+      lightbox.addEventListener("click", (event) => {
+        if (
+          event.target === lightbox ||
+          event.target.hasAttribute("data-lightbox-close")
+        ) {
+          closeBannerLightbox();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeBannerLightbox();
+        }
+      });
+
+      /* ================================
+         YEAR
+      ================================= */
+
+      const year = document.querySelector("#year");
+
+      if (year) {
+        year.textContent = new Date().getFullYear();
+      }
+    </script>
+  </body>
+</html>

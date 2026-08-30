@@ -466,6 +466,9 @@
 .cat-uiux {
   background: #cbd6f1;
 }
+.cat-banner {
+  background: #b9d8c3;
+}
 
 .category-hero {
   background: var(--paper-2);
@@ -946,20 +949,14 @@
   transform: scale(1.03);
 }
 
-
 /* =========================================
    MOBILE
 ========================================= */
 
 @media (hover: none) and (max-width: 768px) {
-
   .comic-books-page .image-gallery .gallery-image::after {
     opacity: 1;
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.5),
-      transparent 45%
-    );
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 45%);
   }
 
   .comic-books-page .image-gallery .gallery-image::before {
@@ -972,7 +969,6 @@
     font-size: 11px;
     padding: 10px 14px;
   }
-
 }
 
 /* =========================================
@@ -980,7 +976,6 @@
 ========================================= */
 
 @media (max-width: 768px) {
-
   .lightbox-prev,
   .lightbox-next {
     position: fixed;
@@ -1020,5 +1015,68 @@
   .lightbox-next:hover {
     background: rgba(0, 0, 0, 0.8);
   }
+}
 
+/* =========================================
+   EDUCATIONAL BOOK CARD OVERLAY
+   Scoped ONLY to Educational page
+========================================= */
+
+.educational-publication-page .educational-book-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.educational-publication-page .educational-book-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 20, 0.48);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.educational-publication-page .educational-book-card::before {
+  content: "VIEW BOOK  ↗";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  z-index: 2;
+
+  padding: 14px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  color: #fff;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+
+  opacity: 0;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+
+  pointer-events: none;
+}
+
+.educational-publication-page .educational-book-card:hover::after,
+.educational-publication-page .educational-book-card:focus-visible::after {
+  opacity: 1;
+}
+
+.educational-publication-page .educational-book-card:hover::before,
+.educational-publication-page .educational-book-card:focus-visible::before {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+  .educational-publication-page .educational-book-card::before {
+    padding: 11px 16px;
+    font-size: 12px;
+  }
 }

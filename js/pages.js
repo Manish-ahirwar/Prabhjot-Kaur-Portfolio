@@ -179,14 +179,43 @@ function updateLightboxImage() {
   }, 120);
 }
 
-/* Open the correct comic gallery */
+/* Open project image lightbox */
 
-galleryImages.forEach((item) => {
+galleryImages.forEach((item, index) => {
+
   item.addEventListener("click", () => {
-    const galleryName = item.dataset.gallery;
 
-    openLightbox(galleryName);
+    /* Comic / Educational gallery */
+    if (item.dataset.gallery) {
+      const galleryName = item.dataset.gallery;
+      openLightbox(galleryName);
+      return;
+    }
+
+    /* Normal project images */
+    const img = item.querySelector("img");
+
+    if (!img) return;
+
+    currentGallery = galleryImages.map((galleryItem) => {
+      const image = galleryItem.querySelector("img");
+
+      return {
+        src: image.src,
+        alt: image.alt || ""
+      };
+    });
+
+    currentLightboxIndex = index;
+
+    updateLightboxImage();
+
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden", "false");
+
+    document.body.classList.add("lightbox-open");
   });
+
 });
 
 /* Close */
@@ -284,3 +313,230 @@ if (viewMoreBtn) {
   }
 
 }
+
+
+/* =========================================
+   EDUCATIONAL & PUBLICATION BOOK VIEWER
+   Scoped only to Educational page
+========================================= */
+
+if (document.body.classList.contains("educational-publication-page")) {
+
+  const educationalBookGalleries = {
+
+    calendar: [
+      {
+        src: "./assets/images/Educational & Publication Design/2026 CALENDER ABBOTT.webp",
+        alt: "2026 Calendar Abbott cover"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/2026 CALENDER ABBOTT/page-02.webp",
+        alt: "2026 Calendar Abbott page 2"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/2026 CALENDER ABBOTT/page-03.webp",
+        alt: "2026 Calendar Abbott page 3"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/2026 CALENDER ABBOTT/page-04.webp",
+        alt: "2026 Calendar Abbott page 4"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/2026 CALENDER ABBOTT/page-05.webp",
+        alt: "2026 Calendar Abbott page 5"
+      }
+    ],
+
+    care: [
+      {
+        src: "./assets/images/Educational & Publication Design/Care Of Young Children.webp",
+        alt: "Care Of Young Children cover"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/Care Of Young Children/page-02.webp",
+        alt: "Care Of Young Children page 2"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/Care Of Young Children/page-03.webp",
+        alt: "Care Of Young Children page 3"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/Care Of Young Children/page-04.webp",
+        alt: "Care Of Young Children page 4"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/Care Of Young Children/page-05.webp",
+        alt: "Care Of Young Children page 5"
+      }
+    ],
+
+    daddy: [
+      {
+        src: "./assets/images/Educational & Publication Design/Daddy Cool-Reflection Card 1-8 2023-ARTWORK.webp",
+        alt: "Daddy Cool Reflection Card cover"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/Daddy Cool-Reflection Card 1-8 2023-ARTWORK/page-02.webp",
+        alt: "Daddy Cool Reflection Card page 2"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/Daddy Cool-Reflection Card 1-8 2023-ARTWORK/page-03.webp",
+        alt: "Daddy Cool Reflection Card page 3"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/Daddy Cool-Reflection Card 1-8 2023-ARTWORK/page-04.webp",
+        alt: "Daddy Cool Reflection Card page 4"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/Daddy Cool-Reflection Card 1-8 2023-ARTWORK/page-05.webp",
+        alt: "Daddy Cool Reflection Card page 5"
+      }
+    ],
+
+    activity: [
+      {
+        src: "./assets/images/Educational & Publication Design/EnglishActivity.webp",
+        alt: "English Activity Book cover"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/English Activity Book 5+ Book_Ai/page-02.webp",
+        alt: "English Activity Book page 2"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/English Activity Book 5+ Book_Ai/page-03.webp",
+        alt: "English Activity Book page 3"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/English Activity Book 5+ Book_Ai/page-04.webp",
+        alt: "English Activity Book page 4"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/English Activity Book 5+ Book_Ai/page-05.webp",
+        alt: "English Activity Book page 5"
+      }
+    ],
+
+    english5: [
+      {
+        src: "./assets/images/Educational & Publication Design/English 5+ Instruction Card_AI.webp",
+        alt: "English 5+ Instruction Card cover"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/English 5+ Instruction Card_AI/page-02.webp",
+        alt: "English 5+ Instruction Card page 2"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/English 5+ Instruction Card_AI/page-03.webp",
+        alt: "English 5+ Instruction Card page 3"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/English 5+ Instruction Card_AI/page-04.webp",
+        alt: "English 5+ Instruction Card page 4"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/English 5+ Instruction Card_AI/page-05.webp",
+        alt: "English 5+ Instruction Card page 5"
+      }
+    ],
+
+    flash: [
+      {
+        src: "./assets/images/Educational & Publication Design/Flash Cards 19-2-2025.webp",
+        alt: "Flash Cards cover"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/Flash Cards 19-2-2025/page-02.webp",
+        alt: "Flash Cards page 2"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/Flash Cards 19-2-2025/page-03.webp",
+        alt: "Flash Cards page 3"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/Flash Cards 19-2-2025/page-04.webp",
+        alt: "Flash Cards page 4"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/Flash Cards 19-2-2025/page-05.webp",
+        alt: "Flash Cards page 5"
+      }
+    ],
+
+    health: [
+      {
+        src: "./assets/images/Educational & Publication Design/Health flash card.webp",
+        alt: "Health Flash Card cover"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/Health flash card/page-02.webp",
+        alt: "Health Flash Card page 2"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/Health flash card/page-03.webp",
+        alt: "Health Flash Card page 3"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/Health flash card/page-04.webp",
+        alt: "Health Flash Card page 4"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/Health flash card/page-05.webp",
+        alt: "Health Flash Card page 5"
+      }
+    ],
+
+    tamil5: [
+      {
+        src: "./assets/images/Educational & Publication Design/TAMIL 5+ Instruction Card_AI.webp",
+        alt: "TAMIL 5+ Instruction Card cover"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/TAMIL 5+ Instruction Card_AI/page-02.webp",
+        alt: "TAMIL 5+ Instruction Card page 2"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/TAMIL 5+ Instruction Card_AI/page-03.webp",
+        alt: "TAMIL 5+ Instruction Card page 3"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/TAMIL 5+ Instruction Card_AI/page-04.webp",
+        alt: "TAMIL 5+ Instruction Card page 4"
+      },
+      {
+        src: "./assets/images/Educational & Publication Design/book-pages/TAMIL 5+ Instruction Card_AI/page-05.webp",
+        alt: "TAMIL 5+ Instruction Card page 5"
+      }
+    ]
+
+  };
+
+  const educationalBookCards = document.querySelectorAll(
+    ".educational-book-card"
+  );
+
+  educationalBookCards.forEach((card) => {
+
+    card.addEventListener("click", () => {
+
+      const bookName = card.dataset.bookGallery;
+      const book = educationalBookGalleries[bookName];
+
+      if (!book) return;
+
+      currentGallery = book;
+      currentLightboxIndex = 0;
+
+      updateLightboxImage();
+
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+
+      document.body.classList.add("lightbox-open");
+    });
+
+  });
+
+}
+
+
+
