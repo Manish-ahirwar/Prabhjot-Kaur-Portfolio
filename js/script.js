@@ -67,7 +67,7 @@ const projects = [
     label: "Poster Design",
     description:
       "Campaign, awareness and communication posters designed for strong visual impact.",
-    image: "./assets/images/Poster%20Design/posters-03.webp",
+    image: "./assets/images/Poster%20Design/posters-03.jpg",
     link: "poster-design.html",
   },
 
