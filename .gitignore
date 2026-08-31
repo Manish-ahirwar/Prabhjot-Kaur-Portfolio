@@ -12,6 +12,6 @@ optimized-assets/
 *.psd
 
 # Original raster images — use WebP versions in Git
-*.jpg
+# *.jpg
 *.jpeg
 *.png
