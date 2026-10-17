@@ -16,6 +16,9 @@ BOOKS = {
     "Wash-Up Book 24-ARTWORK.pdf": "wash-up-book",
     "wat-er wonderful world.pdf": "wat-er-wonderful-world",
     "with cindy the windy comic 2revised.pdf": "with-cindy-the-windy-comic",
+    "abby's magical afternoon hindi.pdf": "abbys-magical-afternoon-hindi",
+    "Abelardo's family day BOOK 4_Folder.pdf": "abelardos-family-day-book-4",
+    "Elmo's exciting sleep.pdf": "elmos-exciting-sleep",
 }
 
 SCALE = 1.5

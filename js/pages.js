@@ -314,10 +314,10 @@ const comicGalleries = {
       src: "./assets/images/Comic Books/super-tasters/page-2.webp",
       alt: "Super Tasters page 2",
     },
-    {
-      src: "./assets/images/Comic Books/super-tasters/page-3.webp",
-      alt: "Super Tasters page 3",
-    },
+    // {
+    //   src: "./assets/images/Comic Books/super-tasters/page-3.webp",
+    //   alt: "Super Tasters page 3",
+    // },
     {
       src: "./assets/images/Comic Books/super-tasters/page-4.webp",
       alt: "Super Tasters page 4",
@@ -365,7 +365,92 @@ const comicGalleries = {
       alt: "NJ Book English page 5",
     },
   ],
+
+    // Abby's Magical Afternoon Hindi
+  abbys: [
+    {
+      src: "./assets/images/Comic Books/abbys-magical-afternoon-hindi/cover.webp",
+      alt: "Abby's Magical Afternoon Hindi cover",
+    },
+    {
+      src: "./assets/images/Comic Books/abbys-magical-afternoon-hindi/page-1.webp",
+      alt: "Abby's Magical Afternoon page 1",
+    },
+    {
+      src: "./assets/images/Comic Books/abbys-magical-afternoon-hindi/page-2.webp",
+      alt: "Abby's Magical Afternoon page 2",
+    },
+    {
+      src: "./assets/images/Comic Books/abbys-magical-afternoon-hindi/page-3.webp",
+      alt: "Abby's Magical Afternoon page 3",
+    },
+    {
+      src: "./assets/images/Comic Books/abbys-magical-afternoon-hindi/page-4.webp",
+      alt: "Abby's Magical Afternoon page 4",
+    },
+    {
+      src: "./assets/images/Comic Books/abbys-magical-afternoon-hindi/page-5.webp",
+      alt: "Abby's Magical Afternoon page 5",
+    },
+  ],
+
+  // Abelardos Family Day Book 4
+  abelardos: [
+    {
+      src: "./assets/images/Comic Books/abelardos-family-day-book-4/cover.webp",
+      alt: "Abelardos Family Day Book 4 cover",
+    },
+    {
+      src: "./assets/images/Comic Books/abelardos-family-day-book-4/page-1.webp",
+      alt: "Abelardos Family Day Book 4 page 1",
+    },
+    {
+      src: "./assets/images/Comic Books/abelardos-family-day-book-4/page-2.webp",
+      alt: "Abelardos Family Day Book 4 page 2",
+    },
+    {
+      src: "./assets/images/Comic Books/abelardos-family-day-book-4/page-3.webp",
+      alt: "Abelardos Family Day Book 4 page 3",
+    },
+    {
+      src: "./assets/images/Comic Books/abelardos-family-day-book-4/page-4.webp",
+      alt: "Abelardos Family Day Book 4 page 4",
+    },
+    {
+      src: "./assets/images/Comic Books/abelardos-family-day-book-4/page-5.webp",
+      alt: "Abelardos Family Day Book 4 page 5",
+    },
+  ],
+
+  // Elmo's Exciting Sleep
+  elmos: [
+    {
+      src: "./assets/images/Comic Books/elmos-exciting-sleep/cover.webp",
+      alt: "Elmo's Exciting Sleep cover",
+    },
+    {
+      src: "./assets/images/Comic Books/elmos-exciting-sleep/page-1.webp",
+      alt: "Elmo's Exciting Sleep page 1",
+    },
+    {
+      src: "./assets/images/Comic Books/elmos-exciting-sleep/page-2.webp",
+      alt: "Elmo's Exciting Sleep page 2",
+    },
+    {
+      src: "./assets/images/Comic Books/elmos-exciting-sleep/page-3.webp",
+      alt: "Elmo's Exciting Sleep page 3",
+    },
+    {
+      src: "./assets/images/Comic Books/elmos-exciting-sleep/page-4.webp",
+      alt: "Elmo's Exciting Sleep page 4",
+    },
+    {
+      src: "./assets/images/Comic Books/elmos-exciting-sleep/page-5.webp",
+      alt: "Elmo's Exciting Sleep page 5",
+    },
+  ],
 };
+
 
 let currentGallery = [];
 let currentLightboxIndex = 0;
